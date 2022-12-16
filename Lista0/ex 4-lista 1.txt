@@ -1,0 +1,35 @@
+﻿---------------------------------EX4-lista 1----------------------------------------
+
+
+modelo Lampada
+inicio do modelo
+  dado estadoDaLampada;
+
+
+  operação acende()
+        inicio
+           estadoDaLampada = aceso;
+        fim
+  operação apaga()
+    inicio
+        estadoDaLampada = apagado;
+    fim
+    
+   operação mostraEstado()
+   inicio
+    se(estadoDaLampada==aceso)
+       imprimi "a Lampada está acesa";
+    senao
+        imprimi"a lampada está apagada";
+
+
+    operação estaLigada()
+    inicio
+        se(estadoDaLampada==aceso)
+            return true;
+        senao
+            return false;
+
+
+    fim
+fim do modelo

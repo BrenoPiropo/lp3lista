@@ -1,0 +1,36 @@
+﻿---------------------------------EX11-lista 1----------------------------------------
+modelo livroDeBiblioteca
+inicio do modelo
+     dado livroDisponivel//pede o nome do livro q o leitor deseja;;
+     dado statusDoCliente=true; // checa se esta em debito com a biblioteca
+     dado estoque=100; // numero para controle de estoque
+     dado prazo=15; // prazo para devolucao, podendo se prolongado
+     operação nomeO(nome)
+     inicio
+        nomedolivro=nome;
+     fim
+     operação antecedentes(debito) // checa se está em debito com a biblioteca
+     inicio
+        se(debito==0)
+            statusDoCliente==false;
+        fim
+     operação checa(apto) // Autoriza o cliente e pega o livro emprestado
+     inicio
+     se(statusDoCliente==true)
+            imprimir"Voce está apto a pegar um livro emprestado";
+            estoque-=1;
+            imprimir"Voce pegou o livro %s emprestado.Voce tem 15 dias para devolver ou entrara em debito com a biblioteca",nome            
+        senão
+            impimir"Voce está em debito com a biblioteca, não pode pegar livros emprestado";
+      fim
+     operação renova() // renova por mais 10 dias
+     inicio
+        prazo+=10;
+     fim
+     operação devolve() //
+     inicio
+        impimir"Obrigado, voce devolveu o livro %s",nome;
+        estoque+=1;
+        statusDoCliente=true;
+      fim
+fimdoModelo
